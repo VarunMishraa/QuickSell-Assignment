@@ -6,10 +6,10 @@ import Progress_icon from '../../assets/in-progress.svg'
 import Todo_icon from '../../assets/To-do.svg'
 import Add_icon from '../../assets/add.svg'
 import Three_dot_icon from '../../assets/3 dot menu.svg'
-import './dash.css'
+import './statusg.css'
 import Cards from '../Cards'
 
-const dashroup = ({ ticketData, userData }) => {
+const StatusGroup = ({ ticketData, userData }) => {
     const [backlog, setBacklog] = useState([]);
     const [todo, setTodo] = useState([]);
     const [inProgress, setInProgress] = useState([]);
@@ -32,9 +32,9 @@ const dashroup = ({ ticketData, userData }) => {
         setState();
     }, [])
   return (
-    <div className='dash-main'>
-        <div className="dash-body">
-            <div className="dash-header">
+    <div className='statusg-main'>
+        <div className="statusg-body">
+            <div className="statusg-header">
                 <span>
                     <img src={Backlog_icon} />
                     <p>Backlog</p>
@@ -49,13 +49,13 @@ const dashroup = ({ ticketData, userData }) => {
                 backlog?.map((e) => {
                     let user = userData.find((u) => u.id == e.userId);
                     return (
-                        <Cards id={e.id} title={e.title} tags={e.tag[0]} user={user} />
+                        <Cards id={e.id} title={e.title} tags={e.tag[0]} user={user} priority={e.priority} />
                     )
                 })
             }
         </div>
-        <div className="dash-body">
-            <div className="dash-header">
+        <div className="statusg-body">
+            <div className="statusg-header">
                 <span>
                     <img src={Todo_icon} />
                     <p>Todo</p>
@@ -70,13 +70,13 @@ const dashroup = ({ ticketData, userData }) => {
                 todo?.map((e) => {
                     let user = userData.find((u) => u.id == e.userId);
                     return (
-                        <Cards id={e.id} title={e.title} tags={e.tag[0]} user={user} />
+                        <Cards id={e.id} title={e.title} tags={e.tag[0]} user={user}  priority={e.priority}/>
                     )
                 })
             }
         </div>
-        <div className="dash-body">
-            <div className="dash-header">
+        <div className="statusg-body">
+            <div className="statusg-header">
                 <span>
                     <img src={Progress_icon} />
                     <p>In Progress</p>
@@ -91,13 +91,13 @@ const dashroup = ({ ticketData, userData }) => {
                 inProgress?.map((e) => {
                     let user = userData.find((u) => u.id == e.userId);
                     return (
-                        <Cards id={e.id} title={e.title} tags={e.tag[0]} user={user} />
+                        <Cards id={e.id} title={e.title} tags={e.tag[0]} user={user}  priority={e.priority}/>
                     )
                 })
             }
         </div>
-        <div className="dash-body">
-            <div className="dash-header">
+        <div className="statusg-body">
+            <div className="statusg-header">
                 <span>
                     <img src={Done_icon} />
                     <p>Done</p>
@@ -112,13 +112,13 @@ const dashroup = ({ ticketData, userData }) => {
                 done?.map((e) => {
                     let user = userData.find((u) => u.id == e.userId);
                     return (
-                        <Cards id={e.id} title={e.title} tags={e.tag[0]} user={user} />
+                        <Cards id={e.id} title={e.title} tags={e.tag[0]} user={user}  priority={e.priority}/>
                     )
                 })
             }
         </div>
-        <div className="dash-body">
-            <div className="dash-header">
+        <div className="statusg-body">
+            <div className="statusg-header">
                 <span>
                     <img src={Canceled_icon} />
                     <p>Canceled</p>
@@ -133,7 +133,7 @@ const dashroup = ({ ticketData, userData }) => {
                 cancelled?.map((e) => {
                     let user = userData.find((u) => u.id == e.userId);
                     return (
-                        <Cards id={e.id} title={e.title} tags={e.tag[0]} user={user} />
+                        <Cards id={e.id} title={e.title} tags={e.tag[0]} user={user}  priority={e.priority}/>
                     )
                 })
             }
@@ -142,4 +142,4 @@ const dashroup = ({ ticketData, userData }) => {
   )
 }
 
-export default dashroup
+export default StatusGroup
