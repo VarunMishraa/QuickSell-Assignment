@@ -1,21 +1,21 @@
-.dash-main{
+.statusg-main{
     display: flex;
     gap: 4vw;
     flex-wrap: wrap;
 }
-.dash-body {
+.statusg-body {
     display: flex;
     flex-direction: column;
     gap: 18px;
     width: 300px;
 }
-.dash-header {
+.statusg-header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
 }
-.dash-header > span {
+.statusg-header > span {
     display: flex;
     gap: 6px;
     align-items: center;
