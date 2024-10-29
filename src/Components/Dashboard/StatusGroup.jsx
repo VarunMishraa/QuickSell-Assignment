@@ -6,7 +6,7 @@ import Progress_icon from '../../assets/in-progress.svg'
 import Todo_icon from '../../assets/To-do.svg'
 import Add_icon from '../../assets/add.svg'
 import Three_dot_icon from '../../assets/3 dot menu.svg'
-import './statusg.css'
+import './dash.css'
 import Cards from '../Cards'
 
 const StatusGroup = ({ ticketData, userData }) => {
