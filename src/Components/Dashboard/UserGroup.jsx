@@ -6,8 +6,9 @@ import Progress_icon from '../../assets/in-progress.svg'
 import Todo_icon from '../../assets/To-do.svg'
 import Add_icon from '../../assets/add.svg'
 import Three_dot_icon from '../../assets/3 dot menu.svg'
-import './dash.css'
+import './statusg.css'
 import Cards from '../Cards'
+// import Card from '../UserCard'
 import Avatar from '../Avatar'
 
 const UserGroup = ({ ticketData, userData }) => {
@@ -33,12 +34,12 @@ const UserGroup = ({ ticketData, userData }) => {
         setState();
     }, [])
   return (
-    <div className='dash-main'>
+    <div className='statusg-main'>
         {userData.map(user => {
             let data = ticketData.filter((e) => e.userId == user.id);
             return(
-            <div className="dash-body">
-                <div className="dash-header">
+            <div className="statusg-body">
+                <div className="statusg-header">
                     <span>
                         <Avatar name={user.name} />
                         <p>{user.name}</p>
@@ -53,7 +54,7 @@ const UserGroup = ({ ticketData, userData }) => {
                 data?.map((e) => {
                     let user = userData.find((u) => u.id == e.userId);
                     return (
-                        <Cards id={e.id} title={e.title} tags={e.tag[0]} user={user} />
+                        <Card id={e.id} title={e.title} tags={e.tag[0]} user={user} priority={e.priority} status={e.status} />
                     )
                 })
             }
