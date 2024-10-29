@@ -4,10 +4,11 @@ import Urgent_icon from '../../assets/SVG - Urgent Priority colour.svg'
 import Medium_icon from '../../assets/Img - Medium Priority.svg'
 import Low_icon from '../../assets/Img - Low Priority.svg'
 import No_icon from '../../assets/No-priority.svg'
-import './dash.css'
+import './statusg.css'
 import Add_icon from '../../assets/add.svg'
 import Three_dot_icon from '../../assets/3 dot menu.svg'
 import Cards from '../Cards'
+// import Cards from '../Cards'
 import Avatar from '../Avatar'
 
 const PriorGroup = ({ ticketData, userData }) => {
@@ -33,9 +34,9 @@ const PriorGroup = ({ ticketData, userData }) => {
         setState();
     }, [])
   return (
-    <div className='dash-main'>
-        <div className="dash-body">
-            <div className="dash-header">
+    <div className='statusg-main'>
+        <div className="statusg-body">
+            <div className="statusg-header">
                 <span>
                     <img src={No_icon} />
                     <p>No priority</p>
@@ -50,13 +51,13 @@ const PriorGroup = ({ ticketData, userData }) => {
                 backlog?.map((e) => {
                     let user = userData.find((u) => u.id == e.userId);
                     return (
-                        <Cards id={e.id} title={e.title} tags={e.tag[0]} user={user} />
+                        <Cards id={e.id} title={e.title} tags={e.tag[0]} user={user}  priority={e.priority} status={e.status}/>
                     )
                 })
             }
         </div>
-        <div className="dash-body">
-            <div className="dash-header">
+        <div className="statusg-body">
+            <div className="statusg-header">
                 <span>
                     <img src={Urgent_icon} />
                     <p>Urgent</p>
@@ -71,13 +72,13 @@ const PriorGroup = ({ ticketData, userData }) => {
                 todo?.map((e) => {
                     let user = userData.find((u) => u.id == e.userId);
                     return (
-                        <Cards id={e.id} title={e.title} tags={e.tag[0]} user={user} />
+                        <Cards id={e.id} title={e.title} tags={e.tag[0]} user={user}  priority={e.priority} status={e.status}/>
                     )
                 })
             }
         </div>
-        <div className="dash-body">
-            <div className="dash-header">
+        <div className="statusg-body">
+            <div className="statusg-header">
                 <span>
                     <img src={High_icon} />
                     <p>High</p>
@@ -92,13 +93,13 @@ const PriorGroup = ({ ticketData, userData }) => {
                 inProgress?.map((e) => {
                     let user = userData.find((u) => u.id == e.userId);
                     return (
-                        <Cards id={e.id} title={e.title} tags={e.tag[0]} user={user} />
+                        <Cards id={e.id} title={e.title} tags={e.tag[0]} user={user}  priority={e.priority} status={e.status}/>
                     )
                 })
             }
         </div>
-        <div className="dash-body">
-            <div className="dash-header">
+        <div className="statusg-body">
+            <div className="statusg-header">
                 <span>
                     <img src={Medium_icon} />
                     <p>Medium</p>
@@ -113,13 +114,13 @@ const PriorGroup = ({ ticketData, userData }) => {
                 done?.map((e) => {
                     let user = userData.find((u) => u.id == e.userId);
                     return (
-                        <Cards id={e.id} title={e.title} tags={e.tag[0]} user={user} />
+                        <Cards id={e.id} title={e.title} tags={e.tag[0]} user={user}  priority={e.priority} status={e.status}/>
                     )
                 })
             }
         </div>
-        <div className="dash-body">
-            <div className="dash-header">
+        <div className="statusg-body">
+            <div className="statusg-header">
                 <span>
                     <img src={Low_icon} />
                     <p>Low</p>
@@ -134,7 +135,8 @@ const PriorGroup = ({ ticketData, userData }) => {
                 cancelled?.map((e) => {
                     let user = userData.find((u) => u.id == e.userId);
                     return (
-                        <Cards id={e.id} title={e.title} tags={e.tag[0]} user={user} />
+
+                        <Cards id={e.id} title={e.title} tags={e.tag[0]} user={user}  priority={e.priority} status={e.status}/>
                     )
                 })
             }
