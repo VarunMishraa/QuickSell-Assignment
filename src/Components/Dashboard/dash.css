@@ -1,0 +1,22 @@
+.dash-main{
+    display: flex;
+    gap: 4vw;
+    flex-wrap: wrap;
+}
+.dash-body {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    width: 300px;
+}
+.dash-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.dash-header > span {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
